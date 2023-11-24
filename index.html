@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <link href="https://unpkg.com/nes.css/css/nes.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+    <title>Snake Game</title>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="main-wrapper">
+            <div class="game-wrapper">
+
+                <div class="names">
+                    <div class="name-snake">
+                        <h4>S</h4>
+                        <h4>N</h4>
+                        <h4>A</h4>
+                        <h4>K</h4>
+                        <h4>E</h4>
+                    </div>
+                    <div class="name-game">
+                        <h4>G</h4>
+                        <h4>A</h4>
+                        <h4>M</h4>
+                        <h4>E</h4>
+                    </div>
+                </div>
+
+                <form class="info-player">
+                    <p>Escolha um nickname e uma cor para iniciar!</p>
+
+                    <div class="input-wrapper">
+                        <input type="text" placeholder="nickname" id="nickname">
+                        <div class="input-color-container">
+                            <input class="input-color" id="snake-color" type="color" value="#008000">
+                        </div>
+
+                    </div>
+                    <br>
+                    <input type="checkbox" name="level" id="wall">
+                    <label for="level">Paredes</label>
+
+                    <br> <br>
+                    <a href="game.html"><button id="play" type="submit" class="nes-btn is-warning">Iniciar</button></a>
+                    <ul id="controls">
+                        <li>W-Up</li>
+                        <li>A-Left</li>
+                        <li>S-Down</li>
+                        <li>D-Right</li>
+                    </ul>
+                </form>
+            </div>
+
+            <svg width="610" height="610" viewBox="0 0 758 759" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 758.5C1 758.5 0.5 8 0.5 1H757.5V758.5H1Z" id="mainSvg" />
+            </svg>
+        </div>
+
+        <div class="player-rank">
+            <div class="rank">
+                <ul>
+                    <p>RECORDE</p>
+                    <li id="best">-----</li>
+                </ul>
+            </div>
+        </div>
+        <div class="snake"></div>
+        <div class="snake-purple"></div>
+        <div class="snake-yellow"></div>
+
+    </div>
+
+</body>
+<!-- <script src="node_modules/animejs/lib/anime.min.js"></script> -->
+<script type="module" src="script.js"></script>
+
+
+</html>

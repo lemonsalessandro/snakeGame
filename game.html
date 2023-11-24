@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <link href="https://unpkg.com/nes.css/css/nes.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+    <title>Snake Game</title>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="game">
+            <div id="score-points">
+                <h3>SCORE</h3>
+                <p id="score-game">0</p>
+            </div>
+            <canvas id="snake-game" width="1000" height="500"></canvas>
+        </div>
+        <div class="player-rank">
+            <div class="rank">
+                <ul>
+                    <p>RECORD</p>
+                    <li id="best">-----</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <audio id="audio" src="/audio/point.wav" preload="auto"></audio>
+    <script type="module" src="main.js"></script>
+</body>
+
+</html>

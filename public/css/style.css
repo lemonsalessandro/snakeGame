@@ -1,0 +1,314 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+body {
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: rgb(41, 66, 57);
+    background: linear-gradient(0deg, #294239 50%, #43685a 100%);
+}
+
+.main-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-wrapper {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 35px;
+    background-color: #4A4239;
+    /* border: 2px solid #000; */
+    width: 600px;
+    height: 600px;
+    color: #fff;
+    z-index: 1;
+    /* box-shadow: 2px 2px 4px black; */
+    position: absolute;
+}
+
+.game-wrapper h4 {
+    font-size: 28px;
+}
+
+.info-player {
+    text-align: center;
+}
+
+.info-player p {
+    animation: main-text ease-in-out infinite 1.5s;
+}
+
+#nickname {
+    outline: none;
+}
+
+#nickname::placeholder {
+    text-align: center;
+    letter-spacing: 5px;
+}
+
+#controls {
+    display: flex;
+    flex-direction: row;
+    gap: 35px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+#controls>li {
+    background-color: black;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+.names {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.name {
+    display: inline-flex;
+    letter-spacing: 10px;
+}
+
+.name-snake,
+.name-game {
+    display: inline-flex;
+    letter-spacing: 10px;
+}
+
+.names h4 {
+    animation: snake-text 1.5s infinite ease-in-out
+}
+
+.name-snakeh4:nth-of-type(1) {
+    animation-delay: 0.2s;
+}
+
+.name-snake h4:nth-of-type(2) {
+    animation-delay: 0.4s;
+}
+
+.name-snake h4:nth-of-type(3) {
+    animation-delay: 0.6s;
+}
+
+.name-snake h4:nth-of-type(4) {
+    animation-delay: 0.8s;
+}
+
+.name-snake h4:nth-of-type(5) {
+    animation-delay: 1s;
+}
+
+.name-game h4:nth-of-type(1) {
+    animation-delay: 1.2s;
+}
+
+.name-game h4:nth-of-type(2) {
+    animation-delay: 1.4s;
+}
+
+.name-game h4:nth-of-type(3) {
+    animation-delay: 1.6s;
+}
+
+.name-game h4:nth-of-type(4) {
+    animation-delay: 1.8s;
+}
+
+#snake-color {
+    background-color: #fff;
+    outline: none;
+}
+
+.input-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.input-color-container {
+    position: relative;
+    overflow: hidden;
+    width: 50px;
+    height: 30px;
+    border-radius: 5px;
+}
+
+.input-color {
+    position: absolute;
+    right: -8px;
+    top: -8px;
+    width: 80px;
+    height: 56px;
+    border: none;
+}
+
+.player-rank {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 600px;
+    color: #fff;
+}
+
+.rank {
+    padding: 30px;
+}
+
+.rank #best {
+    color: #FFD700;
+}
+
+.snake {
+    background: url(../img/spritesheet.png);
+    height: 100px;
+    width: 170px;
+    position: absolute;
+    left: 0;
+    background-position: -35px -35px;
+    offset-path: path("M1489.5 730.5C1255.5 926.9 982.5 684 969.5 601C817 534 600 575.5 506.5 684C403.326 803.726 245.5 756.5 90.5 730.5C-33.5 709.7 -8.00002 547 41 477C134 324.5 357.8 504.3 331 241.5C297.5 -87 638.5 16.5 693 16.5C747.5 16.5 1091.5 187.5 1003.5 285.5C915.5 383.5 1151 466.5 1231 373.5C1295 299.1 1392 342.5 1432.5 373.5C1528.5 446.981 1723.5 534.1 1489.5 730.5Z");
+    animation: move 5s steps(8) infinite, walk 15s infinite linear;
+}
+
+.snake-purple {
+    background: url(../img/spritesheet2.png);
+    height: 100px;
+    width: 170px;
+    position: absolute;
+    left: 0;
+    background-position: -35px -35px;
+    offset-path: path("M430 438.5C344 550.5 144.167 628.167 55 653H45L1.5 886.5L73.5 1045.5L297 940.5C294.5 889.5 317.6 774.2 430 721C542.4 667.8 605.167 728.833 622.5 766H1355C1503.17 775.667 1820.2 838.8 1903 1014C1985.8 1189.2 2152.5 885.667 2225.5 712L2005 446.5C1981 403 1930.9 291.7 1922.5 194.5C1912 73 1780 89.5 1681 55C1582 20.5 1503.5 37 1455.5 38.5C1417.1 39.7 1388.83 14 1379.5 1.00006H594C594 1.00006 516 326.5 430 438.5Z");
+    animation: move 5s steps(8) infinite, walktwo 20s infinite linear;
+}
+
+.snake-yellow {
+    background: url(../img/spritesheet3.png);
+    height: 100px;
+    width: 170px;
+    position: absolute;
+    left: 0;
+    background-position: -35px -35px;
+    offset-path: path("M594.5 132C468.9 64.8 247.167 64.3333 152 72.5C59.5 76.0995 92.5 49.5 8.5 11.5C-58.7 -18.9 -112.167 24.1666 -130.5 49.5L-77.5 738C-7.66666 750 164.4 770.1 294 754.5C456 735 794 812 888.5 853.5C983 895 1339 891.5 1375.5 895C1404.7 897.8 1570.33 935.5 1649.5 954C1687.5 993.167 1763.5 1074.1 1763.5 1084.5C1763.5 1097.5 2009.5 1065 2006 1043.5C2003.2 1026.3 1934.5 799.667 1900.5 688.5C1825.17 665.833 1663.9 605.3 1621.5 544.5C1579.1 483.7 1373.83 367.5 1276.5 317C1101.5 283.333 720.1 199.2 594.5 132Z");
+    animation: move 5s steps(8) infinite, walkthree 25s infinite linear;
+}
+
+#mainSvg {
+    position: absolute;
+    stroke-dasharray: 800;
+    stroke-width: 10px;
+    stroke: #f7d51d;
+    fill: none;
+}
+
+@keyframes move {
+    0% {
+        background-position: -35px -35px;
+    }
+
+    100% {
+        background-position: 1760px -35px;
+    }
+}
+
+/* ANIMAÇÕES */
+@keyframes snake-text {
+
+    0%,
+    100% {
+        transform: translateY(0);
+        color: greenyellow;
+    }
+
+    50% {
+        transform: translateY(-10px);
+        color: green;
+    }
+}
+
+@keyframes main-text {
+
+    0%,
+    100% {
+        scale: 1;
+        opacity: .5;
+    }
+
+    50% {
+        scale: 1.02;
+        opacity: 1;
+    }
+}
+
+@keyframes walk {
+    100% {
+        offset-distance: 100%;
+    }
+}
+
+@keyframes walktwo {
+    100% {
+        offset-distance: 100%;
+    }
+}
+
+@keyframes walkthree {
+    100% {
+        offset-distance: 100%;
+    }
+}
+
+#game-screen {
+    text-align: center;
+    position: absolute;
+    min-width: 510px;
+}
+
+#game-screen canvas {
+    box-shadow: #1b1b1b 5px 5px 10px;
+}
+
+#score-points {
+    text-align: center;
+    color: #fff;
+    /* position: absolute; */
+    /* right: 3%;
+    top: 10%; */
+}
+
+
+.el {
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+}
+
+
+
+/* PAGINA GAME.JS */
+.game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
